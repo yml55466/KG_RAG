@@ -93,11 +93,19 @@ cd KG_RAG
 pip install -r requirements.txt
 ```
 
-# plus：attention：需要将此路径下的文件/mnt/data/yanmingliang/anaconda/envs/kg_rag/lib/python3.10/http/client.py中第1255行的
-#               #values[i] = one_value.encode('latin-1')
-# 改为
-#               one_value = one_value.encode('utf-8', 'ignore').decode('utf-8')
-#               values[i] = one_value.encode('latin-1',"ignore")
+#### plus attention：
+需要将此路径下的文件/mnt/data/yanmingliang/anaconda/envs/kg_rag/lib/python3.10/http/client.py中第1255行的
+
+```
+values[i] = one_value.encode('latin-1')
+```
+
+改为
+
+```
+one_value = one_value.encode('utf-8', 'ignore').decode('utf-8')
+values[i] = one_value.encode('latin-1',"ignore")
+```
 
 ### Step 4: Update config.yaml 
 
